@@ -41,6 +41,10 @@
 
             console.log(phone, name);
 
+            modal.style.display = 'none';
+            document.getElementById('main-content').innerHTML = '<h1>Takk fyrir</h1><p>Við höfum samband.</p>';
+            document.getElementById('tilbod-t').style.display = 'none';
+
             // let fetchData = { 
             //     method: 'POST', 
             //     body: data
@@ -167,7 +171,7 @@
             <!-- HEADER -->
             <header class="row space-b headhead">
                 <div><img src="./assets/logo.svg" class="logo" style="margin-top: 10px;"></div>
-                <div><button class="big-btn btn1 tilbod-takki clickable" id="myBtn" onclick="openModal('myModal')">FÁ RÁÐGJÖF</button></div>
+                <div><button id="tilbod-t" class="big-btn btn1 tilbod-takki clickable" id="myBtn" onclick="openModal('myModal')">FÁ RÁÐGJÖF</button></div>
             </header>
             <!-- /HEADER -->
 
@@ -187,39 +191,41 @@
 
                     <div class="strik"> </div>
 
-                    <div class="radgjof">
-                        Ráðgjöf í notendaupplifun fyrir fyrirtæki sem þykja vænt um viðskiptavini sína
-                        <a class="clickable read-more-link" onclick="openModal('myModal2')">lesa meira…</a>
-                    </div>
-
-                    <div class="formform">
-
-                        <!-- TEMPLATE -->
-
-                        <div>
-                            <div>
-                                <div class="your-name">
-                                    Hvernig er best að hafa samband?
-                                </div>
-                            </div>
-                            <div class="spass" style="display: flex; flex-direction: row; align-items: center;">
-                                <img src="./assets/phone-active.svg" id="phone1" class=" contact-button" onclick="selectContactMedium('phone1', 'email1', 'contact-box1', 'Skrifaðu símanúmer')">
-                                <img src="./assets/email-inactive.svg" id="email1" class=" contact-button" onclick="selectContactMedium('email1', 'phone1', 'contact-box1', 'Skrifaðu netfang')">
-                                <div class="bla">
-                                    <input id="contact-box1" class="input-box" placeholder="Skrifaðu símanúmer" >
-                                </div>
-                            </div>
-                            <div>
-                                <div class="your-name">
-                                    Hvað heitir snillingurinn?
-                                </div>
-                                <input id="name1" placeholder="Nafn" class="input-box spass phone-box">
-                            </div>
-                            <button class="big-btn btn2 clickable" type="button" onclick="sendForm('name1', 'contact-box1')">FÁ RÁÐGJÖF</button>
+                    <div id="main-content">
+                        <div class="radgjof">
+                            Ráðgjöf í notendaupplifun fyrir fyrirtæki sem þykja vænt um viðskiptavini sína
+                            <a class="clickable read-more-link" onclick="openModal('myModal2')">lesa meira…</a>
                         </div>
 
-                        <!-- /TEMPLATE -->
+                        <div class="formform"  >
 
+                            <!-- TEMPLATE -->
+
+                            <div>
+                                <div>
+                                    <div class="your-name">
+                                        Hvernig er best að hafa samband?
+                                    </div>
+                                </div>
+                                <div class="spass" style="display: flex; flex-direction: row; align-items: center;">
+                                    <img src="./assets/phone-active.svg" id="phone1" class=" contact-button" onclick="selectContactMedium('phone1', 'email1', 'contact-box1', 'Skrifaðu símanúmer')">
+                                    <img src="./assets/email-inactive.svg" id="email1" class=" contact-button" onclick="selectContactMedium('email1', 'phone1', 'contact-box1', 'Skrifaðu netfang')">
+                                    <div class="bla">
+                                        <input id="contact-box1" class="input-box" placeholder="Skrifaðu símanúmer" >
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="your-name">
+                                        Hvað heitir snillingurinn?
+                                    </div>
+                                    <input id="name1" placeholder="Nafn" class="input-box spass phone-box">
+                                </div>
+                                <button class="big-btn btn2 clickable" type="button" onclick="sendForm('name1', 'contact-box1')">FÁ RÁÐGJÖF</button>
+                            </div>
+
+                            <!-- /TEMPLATE -->
+
+                        </div>
                     </div>
 
                 </form>
